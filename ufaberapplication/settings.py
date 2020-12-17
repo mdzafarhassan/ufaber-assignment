@@ -131,8 +131,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-# HOST_ADDRESS = "http://192.168.0.101:9000"
-HOST_ADDRESS = "https://ufaber-assignment.herokuapp.com"
+HOST_ADDRESS = "http://192.168.0.101:9000"
+# HOST_ADDRESS = "https://ufaber-assignment.herokuapp.com"
 
 API_BASE_URL = HOST_ADDRESS+"/api/"
 IMG_SERVER = HOST_ADDRESS
