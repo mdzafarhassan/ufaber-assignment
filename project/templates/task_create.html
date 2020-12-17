@@ -5,7 +5,7 @@
 
 <div class="container page-content">
   <div class="page-heading">
-    <h2>{% if edit %}Update Project Info{% else %}Create New Project{% endif %}</h2>
+    <h2>Create New Project ({{project.name}})</h2>
   </div>
   <div class="form-create-project">
     <form class="row g-3" method="POST" enctype="multipart/form-data">
@@ -19,13 +19,14 @@
         <textarea class="form-control" name="description" id="desc" rows="3">{{data.description}}</textarea>
       </div>
       <div class="col-md-12">
-        <label for="Duration" class="form-label">Duration</label>
-        <input type="text" class="form-control" name="duration" value="{{data.duration}}" id="Duration">
+        <label for="Duration" class="form-label">Start Date</label>
+        <input type="date" class="form-control" name="start_date" value="{{data.start_date}}" id="Duration">
       </div>
-      <div>
-        <label for="Duration" class="form-label">Duration</label>
-        <input class="form-control" type="file" name="avatar" id="formFile">
+      <div class="col-md-12">
+        <label for="Duration" class="form-label">End Date</label>
+        <input type="date" class="form-control" name="end_date" value="{{data.end_date}}" id="Duration">
       </div>
+
       <div class="col-12">
         <button type="submit" class="btn btn-primary">{% if edit %}Update{% else %}Create{% endif %}</button>
       </div>
