@@ -12,22 +12,22 @@
       {% csrf_token %}
       <div class="col-md-12">
         <label for="proj_name" class="form-label">Name</label>
-        <input type="text" class="form-control" name="name" id="proj_name">
+        <input type="text" class="form-control" name="name" value="{{data.name}}" id="proj_name">
       </div>
       <div class="col-md-12">
         <label for="desc" class="form-label">Description</label>
-        <textarea class="form-control" name="description" id="desc" rows="3"></textarea>
+        <textarea class="form-control" name="description" id="desc" rows="3">{{data.description}}</textarea>
       </div>
       <div class="col-md-12">
         <label for="Duration" class="form-label">Duration</label>
-        <input type="text" class="form-control" name="duration" id="Duration">
+        <input type="text" class="form-control" name="duration" value="{{data.duration}}" id="Duration">
       </div>
       <div>
         <label for="Duration" class="form-label">Duration</label>
         <input class="form-control" type="file" name="avatar" id="formFile">
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">{% if edit %}Update{% else %}Create{% endif %}</button>
       </div>
     </form>
   </div>

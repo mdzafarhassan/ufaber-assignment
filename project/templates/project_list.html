@@ -7,13 +7,21 @@
   <a href="/project/create-new"><button type="button" class="btn btn-primary btn-lg btn-create-task">Create New Task</button></a>
   <div class="row">
 
-    {% for x in data %}
+    {% for project in data %}
     <div class="card project-card" style="width: 18rem;">
-        <img src="{{custom_settings.img_server}}{{x.avatar}}" class="card-img-top" alt="...">
+        <img src="{{custom_settings.img_server}}{{project.avatar}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{x.name}}</h5>
-        <p class="card-text">{{x.description}}</p>
-        <a href="/project/{{x.id}}" class="btn btn-primary">Go somewhere</a>
+        <a href="/project/{{project.id}}/">
+          <h5 class="card-title">{{project.name}}</h5>
+        </a>
+        <p class="card-text">{{project.description}}</p>
+
+        <a href="/project/{{project.id}}/update">
+          <button type="button" class="btn btn-primary">Update</button>
+        </a>
+        <a href="/project/{{project.id}}/delete/">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </a>
       </div>
     </div>
     {% endfor %}
