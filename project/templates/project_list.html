@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+  <a href="/project/create-new"><button type="button" class="btn btn-primary btn-lg btn-create-task">Create New Task</button></a>
+  <div class="row">
+
+    {% for x in data %}
+    <div class="card project-card" style="width: 18rem;">
+        <img src="{{custom_settings.img_server}}{{x.avatar}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{x.name}}</h5>
+        <p class="card-text">{{x.description}}</p>
+        <a href="/project/{{x.id}}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
