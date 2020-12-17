@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', views.project_list, name="project_list"),
@@ -10,3 +11,4 @@ urlpatterns = [
     path('project/<int:project_id>/update',
          views.project_update, name="project_update"),
 ]
+urlpatterns += staticfiles_urlpatterns()
