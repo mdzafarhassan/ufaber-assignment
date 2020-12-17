@@ -8,10 +8,6 @@ body {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  position: fixed;
-  width: 100%;
-  /* left: 0; */
-  bottom: 0;
 }
 
 .page-content {
@@ -34,4 +30,8 @@ body {
   margin-top: 1rem;
   padding: 2rem;
   background-color: rgb(199, 199, 199);
+}
+
+.project-image {
+  width: 50%;
 }

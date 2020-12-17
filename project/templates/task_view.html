@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+  {% block content %}
+  <div class="container page-content">
+    <div class="page-heading">
+      <h2>{{project.name}}</h2>
+      <h4>{{project.duration}}</h4>
+      <div class="image-container" style="display: inline-block;">
+        <img class="project-image" src="{{project.avatar}}" alt="">
+      </div>
+      <p class="project-desc">{{project.description}}</p>
+    </div>
+
+    {% if task_list %}
+    <div class="task-section">
+      <h3>Task List</h3>
+      <table class="table table-sm table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in task_list %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{task.name}}</td>
+            <td>{{task.description|slice:"75"}}{% if task.description|length > 75 %}...{% endif %}
+            </td>
+            <td>{{task.start_date}}</td>
+            <td>{{task.end_date}}</td>
+            <td>delete/update</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+
+  </>
+
+{% endblock %}

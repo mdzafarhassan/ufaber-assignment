@@ -79,3 +79,18 @@ def project_update(request, **kwargs):
     if response and response.status_code == 200:
         context['data'] = response.json
     return render(request, 'project_create.html', context)
+
+
+def project_view(request, **kwargs):
+    project_id = kwargs.get('project_id')
+    context = {}
+    url1 = api_host + f"{project_id}/"
+
+    response1 = requests.get(url1)
+    if response1 and response1.status_code == 200:
+        context['project'] = response1.json
+        url2 = api_host + f"{project_id}/task/"
+        response2 = requests.get(url2)
+        if response2 and response2.status_code == 200:
+            context["task_list"] = response2.json
+    return render(request, 'task_view.html', context)
